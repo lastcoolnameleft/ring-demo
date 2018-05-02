@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Azure Ring Demo</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -24,16 +24,82 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown>
+					<textarea data-template>
+						## Azure Ring Demo
+						Using Functions, Logic Apps, Event Grid, Cognitive Services
 
-<section data-markdown>
-	<textarea data-template>
-		## Page title
+						Inspired by [Serverless Doorbell](https://medium.com/@jeffhollan/serverless-doorbell-azure-functions-and-ring-com-f24b44e01645) by [Jeff Hollan](https://medium.com/@jeffhollan)
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## [Video Indexer](https://www.videoindexer.ai/)
 
-		A paragraph with some text and a [link](http://hakim.se).
-	</textarea>
-</section>
+						Features:
+						* Audio Transcript
+						* Face tracking + identification
+						* Speaker indexing
+						* Visual Text Recognition (OCR)
+						* Translation
+						* Keyword extraction
+						* Brand Detection
+						* ... and more
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## Start with ...
+						[Ring Doorbell](https://ring.com/)
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## Closed ecosystem
+					
+						Must pay $30/yr for recording.
+
+						Thanks to [Dav Glass](https://dav.glass/) we have:
+
+						[Doorbot](https://github.com/davglass/doorbot)
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## Check for new rings
+
+						Set on schedule
+						[function.js](https://github.com/jeffhollan/functions-node-ring-doorbell/blob/7419af2d37c72a868614dfdc5be7ff69bb2a194b/CheckRings/function.json)
+
+						Run Azure Function
+						[CheckRing.js](https://github.com/jeffhollan/functions-node-ring-doorbell/blob/7419af2d37c72a868614dfdc5be7ff69bb2a194b/CheckRings/index.js#L29-L43)
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## Add Event
+						
+						Push new rings to [Event Grid](https://docs.microsoft.com/en-us/azure/event-grid/overview)
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## Create Logic App
+						
+						* When event is pushed to Event Grid
+						* Upload video to Video Indexer
+						* Loop until video is processed
+						* Get video breakdown
+						* Create document in CosmosDB
+					</textarea>
+				</section>
+
+
+				<section data-markdown>
+					<textarea data-template>
+						## DEMO TIME!!!
+					</textarea>
+				</section>
 
 				
 			</div>
